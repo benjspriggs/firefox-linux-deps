@@ -1,4 +1,3 @@
-FROM benjspriggs/docker-stretch-dev
 FROM rust
 
 LABEL maintainer="ben@sprico.com"
