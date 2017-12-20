@@ -32,7 +32,11 @@ RUN virtualenv .
 ADD $MOZILLA_CENTRAL .
 RUN tar -xzf $MOZILLA_ARCHIVE && rm $MOZILLA_ARCHIVE
 RUN mv mozilla-central-* mozilla-central
-RUN ls -la
+
+# clean up size
+RUN apt-get clean
+RUN apt-get autoclean
+RUN apt-get autoremove
 
 WORKDIR mozilla-central
 
